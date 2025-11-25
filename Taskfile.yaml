@@ -1,0 +1,14 @@
+# ./Taskfile.yaml
+# See: https://taskfile.dev/api/
+
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task: generate
+
+  generate:
+    desc: "Generate code from proto files"
+    cmds:
+      - protoc -I "C:\Users\MyProject\protos\proto" "C:\Users\MyProject\protos\proto\sso.proto" --go_out=./gen/go --go_opt=paths=source_relative --go-grpc_out=./gen/go --go-grpc_opt=paths=source_relative
